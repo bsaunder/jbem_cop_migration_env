@@ -45,16 +45,13 @@
   ],
   "provisioners": [
     {
-      "environment_vars": [
-        "CHEF_VERSION={{user `chef_version`}}"
-      ],
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/fedora-20/fix-slow-dns.sh",
         "scripts/fedora-20/sshd.sh",
         "scripts/fedora-20/vmtools.sh",
-        "scripts/fedora-20/chef.sh",
         "scripts/fedora-20/vagrant.sh",
+        "scripts/fedora-20/sudoers.sh",
         "scripts/fedora-20/cleanup.sh",
         "scripts/fedora-20/minimize.sh"
       ],
@@ -62,7 +59,6 @@
     }
   ],
   "variables": {
-    "chef_version": "provisionerless",
     "mirror": "http://download.fedoraproject.org/pub/fedora/linux"
   }
 }
