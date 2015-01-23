@@ -19,8 +19,17 @@ Follow the steps below to build the Environment
   - Packer will Launch a VirtualBox VM for the Installation. Do not Disturb it.
   - Completed build will be located at `builds/virtualbox/jbemcop_fedora-21_base.box`
   - Change to `vagrant` directory
-  - Add the Vagrant Base image to Vagrant by running `vagrant box add jbemcop-fedora20-base ../builds/virtualbox/jbemcop_fedora-20_base.box`
+  - Add the Vagrant Base image to Vagrant by running:
+    - `vagrant box add jbemcop-fedora20-base ../builds/virtualbox/jbemcop_fedora-20_base.box`
   - Run `vagrant up` to Start VM
+
+## Additional Vagrant Commands
+These commands can be used to control the VM. All should be executed from the `vagrant` directory.
+  - vagrant suspend - Suspends the VM
+  - vagrant resume - Resumes the VM
+  - vagrant halt - Shuts down the VM
+  - vagrant up - Runs the VM (Will Provision if it is a new VM)
+  - vagrant destroy - Destroys the VM so it can be recreated using `vagrant up`
 
 ## Default VM Information
 The VM that is created has the following default user accounts
