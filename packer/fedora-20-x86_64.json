@@ -49,9 +49,10 @@
       "scripts": [
         "scripts/fedora-20/fix-slow-dns.sh",
         "scripts/fedora-20/sshd.sh",
-        "scripts/fedora-20/vmtools.sh",
+        "scripts/fedora-20/gnome.sh",
         "scripts/fedora-20/vagrant.sh",
         "scripts/fedora-20/sudoers.sh",
+        "scripts/fedora-20/vmtools.sh",
         "scripts/fedora-20/cleanup.sh",
         "scripts/fedora-20/minimize.sh"
       ],

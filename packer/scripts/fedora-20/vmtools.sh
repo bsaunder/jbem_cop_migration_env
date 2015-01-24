@@ -3,6 +3,7 @@
 case "$PACKER_BUILDER_TYPE" in
 
 virtualbox-iso|virtualbox-ovf)
+    yum -y update gcc kernel-devel kernel-headers
     mkdir /tmp/vbox
     VER=$(cat /home/vagrant/.vbox_version)
     mount -o loop /home/vagrant/VBoxGuestAdditions_$VER.iso /tmp/vbox
