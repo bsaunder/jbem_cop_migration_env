@@ -10,13 +10,16 @@ The default VM that is built and configured is a VirtualBox VM that can be run o
 Follow the steps below to build the Environment
   - Install the Required Software
     - [Packer v0.7.5 or Greater](https://packer.io/downloads.html)
+      - Create a new directory, `/opt/packer` on your hdd
+      - Extract the contents of the Packer zip to `/opt/packer`
+      - Add `/opt/packer` to your PATH environment variable
     - [VirtualBox v4.3.20 or Greater](https://www.virtualbox.org/wiki/Downloads)
     - [Vagrant v1.7.2 or Greater](https://www.vagrantup.com/downloads.html)
   - Change to `<SRC_ROOT>/packer` directory
   - Run `packer build -only=virtualbox-iso fedora-20-x86_64.json`
     - The Fedora ISO is upwards of 4gb in size and as a result may take awhile to download.
   - Packer will Launch a VirtualBox VM for the Installation. Do not Disturb it.
-  - Completed build will be located at `<SRC_ROOT>/builds/virtualbox/jbemcop_fedora-21_base.box`
+    - Completed build will be located at `<SRC_ROOT>/builds/virtualbox/jbemcop_fedora-21_base.box`
   - Change to `<SRC_ROOT>/vagrant` directory
   - Add the Vagrant Base image to Vagrant by running:
     - `vagrant box add jbemcop-fedora20-base ../builds/virtualbox/jbemcop_fedora-20_base.box`
