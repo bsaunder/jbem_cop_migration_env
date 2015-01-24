@@ -12,12 +12,12 @@ Follow the steps below to build the Environment
     - [Packer v0.7.5 or Greater](https://packer.io/downloads.html)
     - [VirtualBox v4.3.20 or Greater](https://www.virtualbox.org/wiki/Downloads)
     - [Vagrant v1.7.2 or Greater](https://www.vagrantup.com/downloads.html)
-  - Change to `packer` directory
+  - Change to `<SRC_ROOT>/packer` directory
   - Run `packer build -only=virtualbox-iso fedora-20-x86_64.json`
     - The Fedora ISO is upwards of 4gb in size and as a result may take awhile to download.
   - Packer will Launch a VirtualBox VM for the Installation. Do not Disturb it.
-  - Completed build will be located at `builds/virtualbox/jbemcop_fedora-21_base.box`
-  - Change to `vagrant` directory
+  - Completed build will be located at `<SRC_ROOT>/builds/virtualbox/jbemcop_fedora-21_base.box`
+  - Change to `<SRC_ROOT>/vagrant` directory
   - Add the Vagrant Base image to Vagrant by running:
     - `vagrant box add jbemcop-fedora20-base ../builds/virtualbox/jbemcop_fedora-20_base.box`
   - Run `vagrant up` to Start VM
@@ -49,4 +49,4 @@ When downloading the Fedora 20 ISO, the download progress may stay at 0%. This i
 No. Packer will cache the ISO and re-use it the next time you run it.
 
 #### I just want to restart the VM, do I need to run Packer?
-No. If you just want to wipe away your current VM and start over, you do not need to rebuild the base box with Packer. Simply run `vagrant destroy` from `/vagrant` and it will wipe away your current VM. Running `vagrant up` will create a new VM and re-run all of the provisioning steps to set it back to the default state.
+No. If you just want to wipe away your current VM and start over, you do not need to rebuild the base box with Packer. Simply run `vagrant destroy` from `<SRC_ROOT>/vagrant` and it will wipe away your current VM. Running `vagrant up` will create a new VM and re-run all of the provisioning steps to set it back to the default state.
