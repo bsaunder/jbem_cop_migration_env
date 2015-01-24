@@ -3,9 +3,8 @@ This repo contains the scripts and code necessary to build a standard developmen
 
 ## Environment Information
 The default VM that is built and configured is a VirtualBox VM that can be run on any OS. The VM is built on Fedora 20 x64 and contains the following software packages:
- - Update
- - As
- - Provisioned
+ - Gnome 3
+ - Firefox
 
 ## Running the Environment
 Follow the steps below to build the Environment
