@@ -40,7 +40,13 @@ The following directories are shared by default with the VM
  - shared_data -> /shared_data
   - It is recommended that any user data that needs to be shared is placed here
 
-## Notes
+## FAQ
 
-### Download Progress stays at 0%
+#### Why does Download Progress stay at 0% when running Packer?
 When downloading the Fedora 20 ISO, the download progress may stay at 0%. This is not a problem with the scripts or Packer, but a problem with the Fedora Server not returning a proper file size for the ISO. This can safely be ignored as the image will still be downloaded.
+
+#### Do I have to download that ISO everytime I run Packer?
+No. Packer will cache the ISO and re-use it the next time you run it.
+
+#### I just want to restart the VM, do I need to run Packer?
+No. If you just want to wipe away your current VM and start over, you do not need to rebuild the base box with Packer. Simply run `vagrant destroy` from `/vagrant` and it will wipe away your current VM. Running `vagrant up` will create a new VM and re-run all of the provisioning steps to set it back to the default state.
